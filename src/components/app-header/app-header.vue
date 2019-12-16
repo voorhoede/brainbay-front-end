@@ -1,12 +1,22 @@
 <template>
   <header class="app-header">
-    <p>brainbay</p>
+    <LogoWhite />
     <nav id="nav">
       <router-link to="/">Landing</router-link> |
       <router-link to="/foo">Result</router-link>
     </nav>
   </header>
 </template>
+
+<script>
+import LogoWhite from '../../assets/svg/logo-white.svg'
+
+export default {
+  components: {
+    LogoWhite,
+  },
+}
+</script>
 
 <style>
 .app-header {

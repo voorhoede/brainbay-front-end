@@ -12,9 +12,21 @@ module.exports = {
       title: 'Index Page',
       // chunks to include on this page, by default includes
       // extracted common chunks and vendor chunks.
-      chunks: ['chunk-vendors', 'chunk-common', 'index']
+      chunks: ['chunk-vendors', 'chunk-common', 'index'],
     },
 
-    'detail-page': 'src/main.js'
-  }
+    'detail-page': 'src/main.js',
+  },
+  chainWebpack: (config) => {
+    const svgRule = config.module.rule('svg')
+
+    svgRule.uses.clear()
+
+    svgRule
+      .use('babel-loader')
+      .loader('babel-loader')
+      .end()
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader')
+  },
 }

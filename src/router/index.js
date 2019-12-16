@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'landing',
-    component: Landing
+    component: Landing,
   },
   {
     path: '/:id',
@@ -21,12 +21,12 @@ const routes = [
       {
         path: 'export',
         name: 'result-export',
-        component: () => import(/* webpackChunkName: "result-export" */ '../views/result-export.vue')
+        component: () => import(/* webpackChunkName: "result-export" */ '../views/result-export.vue'),
       },
       {
         path: 'note',
         name: 'result-note',
-        component: () => import(/* webpackChunkName: "result-note" */ '../views/result-note.vue')
+        component: () => import(/* webpackChunkName: "result-note" */ '../views/result-note.vue'),
       },
       {
         path: 'references',
@@ -34,17 +34,17 @@ const routes = [
         component: () => import(/* webpackChunkName: "result-references" */ '../views/result-references.vue'),
         children: [
           { path: 'list', name: 'result-references-list' },
-          { path: ':focusId', name: 'result-references-focus' }
-        ]
-      }
-    ]
-  }
+          { path: ':focusId', name: 'result-references-focus' },
+        ],
+      },
+    ],
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 export default router
