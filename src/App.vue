@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <app-hero v-if="isLanding === true"/>
-    <app-header v-if="isLanding === false"/>
+    <component :is="isLanding ? 'app-hero' : 'app-header'" >
+
+    </component>
+
     <router-view/>
   </div>
 </template>

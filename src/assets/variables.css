@@ -6,10 +6,24 @@
   --s-big: 4.8rem;
   --s-huge: 6.3rem;
 
+  --c-white: #ffffff;
   --c-black: #000000;
   --c-dim: #717574;
   --c-primary: #0099bc;
   --c-secondary: #ea5b0c;
   --c-success: #289b38;
   --c-warn: #d51317;
+
+  --rounded-tiny: 0.5rem;
+  --rounded-medium: 1rem;
+  --rounded-medium: 2rem;
+  --rounded-large: 4rem;
+  --rounded-huge: 5rem;
+
+  --header-height: 11.2rem;
+
+  --ease-in-fast: 0.15s ease-in;
+  --ease-in-medium: 0.25s ease-in;
+  --ease-in-slow: 0.5s ease-in;
+  --ease-out-instant: 0.1s ease-out;
 }
