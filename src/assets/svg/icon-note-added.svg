@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-note-added">
+            <path d="M20.2183908,14.5747126 L20.2183908,22.5057471 C20.217302,22.870311 19.9220351,23.1655779 19.5574713,23.1666667 L7.66091954,23.1666667 C7.2963557,23.1655779 7.0010888,22.870311 7,22.5057471 L7,4.66091954 C7.0010888,4.2963557 7.2963557,4.0010888 7.66091954,4 L19.5574713,4 C19.9220351,4.0010888 20.217302,4.2963557 20.2183908,4.66091954 L20.2183908,6.64367816" id="Shape" stroke="currentColor"></path>
+            <path d="M9.64367816,6.97413793 L17.5747126,6.97413793" id="Shape" stroke="currentColor"></path>
+            <path d="M9.64367816,8.95689655 L17.5747126,8.95689655" id="Shape" stroke="currentColor"></path>
+            <path d="M9.64367816,10.9396552 L15.591954,10.9396552" id="Shape" stroke="currentColor"></path>
+            <polyline id="Path-2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" points="23.4853442 5.93747387 14 19.4416843 9.64367816 15.3304042"></polyline>
+        </g>
+    </g>
+</svg>

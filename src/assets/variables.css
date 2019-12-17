@@ -15,6 +15,8 @@
   --c-secondary: #EC5B00;
   --c-success: #289b38;
   --c-warn: #d51317;
+  
+  --icon-small: var(--s-small);
 
   --rounded-tiny: 0.2rem;
   --rounded-small: 0.5rem;
