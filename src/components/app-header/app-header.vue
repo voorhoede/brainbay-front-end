@@ -17,7 +17,7 @@
 
 <script>
 import LogoWhite from '../../assets/svg/logo-white.svg'
-import ArrowUp from '../../assets/svg/arrow-up.svg'
+import ArrowUp from '../../assets/svg/icon-arrow-up.svg'
 
 export default {
   components: {
@@ -67,5 +67,14 @@ export default {
   transition: color var(--ease-in-fast),
               background-color var(--ease-in-fast),
               border-color var(--ease-in-fast);
+}
+
+.app-header__search {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+
+  width: 100%;
+  max-width: 73.6rem;
 }
 </style>
