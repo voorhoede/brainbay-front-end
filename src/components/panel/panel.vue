@@ -47,7 +47,8 @@ export default {
 <style>
 .panel {
   background-color: var(--c-white);
-  border-radius: var(--rounded-small)
+  border-radius: var(--rounded-small);
+  overflow: hidden;
 }
 
 .panel__header {

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <component :is="isLanding ? 'app-hero' : 'app-header'" >
+    <component
+      :is="isLanding ? 'app-hero' : 'app-header'"
+    >
       <search-bar
         :separated="isLanding"
         :primary-action="isLanding"
