@@ -1,13 +1,17 @@
 <template>
   <main>
-    <h1>Object</h1>
     <router-link :to="{ name: 'object-export' }">Export</router-link>
     <router-link :to="{ name: 'object-note' }">Note</router-link>
     <router-link :to="{ name: 'object-references' }">References</router-link>
 
     <router-view></router-view>
 
-    <article>
+    <Panel
+      title="Woningdetails"
+      tag="article"
+      :divider="false"
+      full-bleed>
+      <AddNoteButton slot="action" />
       <header>
         <address>Galjoenstraat 46, 1503 AT Zaandam</address>
         <p>Woonhuis, eengezinswoning, tussenwoning</p>
@@ -29,12 +33,15 @@
       <footer>
         <span>Let op: belast met erfpacht</span>
       </footer>
-    </article>
+    </Panel>
   </main>
 </template>
 
 <script>
+import Panel from '../components/panel/panel'
+import AddNoteButton from '../components/add-note-button/add-note-button'
 export default {
+  components: { Panel, AddNoteButton },
   mounted () {
     this.$store.commit('object/storeObject', window.object)
   },

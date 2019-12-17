@@ -1,5 +1,6 @@
 <template>
-  <section
+  <component
+    :is="tag"
     class="panel"
     :class="{
       'panel--full-bleed': fullBleed
@@ -17,7 +18,7 @@
     <div class="panel__content">
       <slot />
     </div>
-  </section>
+  </component>
 </template>
 
 <script>
@@ -34,6 +35,10 @@ export default {
     fullBleed: {
       type: Boolean,
       default: false,
+    },
+    tag: {
+      type: String,
+      default: 'section',
     },
   },
 }
