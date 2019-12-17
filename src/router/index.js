@@ -16,25 +16,25 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "result" */ '../views/result.vue'),
+    component: () => import(/* webpackChunkName: "object" */ '../views/object.vue'),
     children: [
       {
         path: 'export',
-        name: 'result-export',
-        component: () => import(/* webpackChunkName: "result-export" */ '../views/result-export.vue'),
+        name: 'object-export',
+        component: () => import(/* webpackChunkName: "object-export" */ '../views/object-export.vue'),
       },
       {
         path: 'note',
-        name: 'result-note',
-        component: () => import(/* webpackChunkName: "result-note" */ '../views/result-note.vue'),
+        name: 'object-note',
+        component: () => import(/* webpackChunkName: "object-note" */ '../views/object-note.vue'),
       },
       {
         path: 'references',
-        name: 'result-references',
-        component: () => import(/* webpackChunkName: "result-references" */ '../views/result-references.vue'),
+        name: 'object-references',
+        component: () => import(/* webpackChunkName: "object-references" */ '../views/object-references.vue'),
         children: [
-          { path: 'list', name: 'result-references-list' },
-          { path: ':focusId', name: 'result-references-focus' },
+          { path: 'list', name: 'object-references-list' },
+          { path: ':focusId', name: 'object-references-focus' },
         ],
       },
     ],

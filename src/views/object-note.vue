@@ -1,5 +1,5 @@
 <template>
   <aside>
-    <h2>Result Note</h2>
+    <h2>Object Note</h2>
   </aside>
 </template>

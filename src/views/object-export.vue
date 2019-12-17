@@ -1,5 +1,5 @@
 <template>
   <aside>
-    <h2>Result Export</h2>
+    <h2>Object Export</h2>
   </aside>
 </template>
