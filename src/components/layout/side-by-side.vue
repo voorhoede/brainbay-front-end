@@ -19,12 +19,12 @@ export default {
       default: 'flex-start',
     },
     grow: {
-      type: Number,
-      default: 1,
+      type: String,
+      default: '1',
     },
     shrink: {
-      type: Number,
-      default: 1,
+      type: String,
+      default: '1',
     },
     basis: {
       type: String,

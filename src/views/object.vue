@@ -15,8 +15,8 @@
       <AddNoteButton slot="action" />
 
       <ObjectDetails>
-        <address slot="header">{{ currentAddress }}</address>
-        <p slot="header">{{ objectType }}</p>
+        <address slot="header">{{ address }}</address>
+        <p slot="header">{{ type }}</p>
         <dl>
           <dt>Aantal kamers</dt>
           <dd>6</dd>
@@ -25,9 +25,9 @@
           <dt>Perceeloppervlakte</dt>
           <dd>150m2</dd>
           <dt>Bouwjaar</dt>
-          <dd>{{ objectDetails.bouwjaar }}</dd>
+          <dd>{{ details.bouwjaar }}</dd>
           <dt>Koopsom</dt>
-          <dd>{{ objectDetails.koopsom }} k.k.</dd>
+          <dd>{{ details.koopsom }} k.k.</dd>
           <dt>Transactiedatum</dt>
           <dd>12-03-2009</dd>
         </dl>
@@ -36,20 +36,21 @@
     </Panel>
 
     <Panel title="Indicatie marktwaarde">
+      <AddNoteButton slot="action" />
       <SideBySide grow="0" basis="25%" justify-content="space-around">
         <Stack tag="section" align-center>
           <Icon><IconProjectedChart /></Icon>
-          <p>&euro;256.400</p>
+          <p>&euro;{{ priceDevelopment }}</p>
           <p>Op basis van prijsontwikkeling sinds laatste keer verkocht</p>
         </stack>
         <Stack tag="section" align-center>
           <Icon><IconHouses /></Icon>
-          <p>&euro;257.000</p>
+          <p>&euro;{{ priceModel }}</p>
           <p>Op basis van modelmatige waardebepaling</p>
         </Stack>
         <Stack tag="section" align-center>
           <Icon><IconHouseBlueprint /></Icon>
-          <p>&euro;354.400</p>
+          <p>&euro;{{ priceAlgorithm }}</p>
           <p>Op basis van huidige vierkantemeterprijs, woningtype en wijk</p>
         </Stack>
       </SideBySide>
@@ -80,10 +81,11 @@ import ObjectDetails from '../components/object-details/object-details'
 export default {
   components: { Panel, AddNoteButton, ObjectDetails, Icon, IconHouseBlueprint, IconHouses, IconProjectedChart, SideBySide, Stack },
   mounted () {
-    this.$store.commit('object/storeObject', window.object)
+    this.$store.commit('object/details/store', window.object)
   },
   computed: {
-    ...mapGetters('object', ['currentAddress', 'objectType', 'objectDetails']),
+    ...mapGetters('object/details', ['address', 'type', 'details']),
+    ...mapGetters('object/indicationMarketValue', ['priceDevelopment', 'priceModel', 'priceAlgorithm']),
   },
 }
 </script>
