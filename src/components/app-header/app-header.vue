@@ -9,7 +9,7 @@
       <slot name="search" />
     </div>
 
-    <button class="app-header__export-button">
+    <button class="app-header__export-button" @click="$emit('export')">
       <ArrowUp aria-hidden="true"/>
       Exporteren
     </button>

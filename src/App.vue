@@ -3,6 +3,7 @@
     <h1 class="sr-only">{{ pageTitle }}</h1>
     <component
       :is="isLanding ? 'app-hero' : 'app-header'"
+      @export="onExport"
     >
       <search-bar
         :separated="isLanding"
@@ -33,6 +34,11 @@ export default {
   computed: {
     isLanding () {
       return this.$route.name === 'landing'
+    },
+  },
+  methods: {
+    onExport () {
+      this.$router.push({ name: 'object-export' })
     },
   },
 }

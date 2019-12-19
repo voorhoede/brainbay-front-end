@@ -1,10 +1,8 @@
 <template>
   <main class="view--object">
-    <router-link :to="{ name: 'object-export' }">Export</router-link>
-    <router-link :to="{ name: 'object-note' }">Note</router-link>
-    <router-link :to="{ name: 'object-references' }">References</router-link>
-
     <router-view></router-view>
+
+    <div />
 
     <Panel
       title="Woningdetails"
@@ -12,7 +10,7 @@
       :divider="false"
       full-bleed>
 
-      <AddNoteButton slot="action" />
+      <AddNoteButton slot="action" @click="onAddNote('object-details')"/>
 
       <ObjectDetails>
         <address slot="header">{{ address }}</address>
@@ -36,7 +34,7 @@
     </Panel>
 
     <Panel title="Indicatie marktwaarde">
-      <AddNoteButton slot="action" />
+      <AddNoteButton slot="action" @click="onAddNote('indication-market-value')"/>
       <SideBySide grow="0" basis="25%" justify-content="space-around">
         <Stack tag="section" align-center>
           <h3 class="sr-only">Prijs ontwikkeling</h3>
@@ -60,7 +58,7 @@
     </Panel>
 
     <Panel title="Referenties">
-      <AddNoteButton slot="action" />
+      <AddNoteButton slot="action" @click="onAddNote('references')"/>
       <section>
         <h3>Verkocht</h3>
         <ObjectList :objects="referencesSold">
@@ -127,6 +125,11 @@ export default {
       'referencesSold': 'references/sold/added',
       'referencesForSale': 'references/forSale/added',
     }),
+  },
+  methods: {
+    onAddNote (panelId) {
+      this.$router.push({ name: 'object-note', params: { panelId } })
+    },
   },
   watch: {
     streetName (newValue) {

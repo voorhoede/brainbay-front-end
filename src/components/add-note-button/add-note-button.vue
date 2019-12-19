@@ -5,6 +5,7 @@
       'add-note-button--has-been-added': hasBeenAdded
     }"
     aria-label="Voeg notitie toe"
+    v-on="$listeners"
   >
     <Icon aria-hidden="true">
       <IconNoteAdded v-if="hasBeenAdded"/>

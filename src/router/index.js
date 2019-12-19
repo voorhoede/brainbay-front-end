@@ -24,7 +24,7 @@ const routes = [
         component: () => import(/* webpackChunkName: "object-export" */ '../views/object-export.vue'),
       },
       {
-        path: 'note',
+        path: 'note/:panelId',
         name: 'object-note',
         component: () => import(/* webpackChunkName: "object-note" */ '../views/object-note.vue'),
       },
