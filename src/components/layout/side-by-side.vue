@@ -1,7 +1,13 @@
 <template>
   <component
     :is="tag"
-    :style="`--justify-content: ${justifyContent}; --flex-grow: ${grow}; --flex-shrink: ${shrink}; --flex-basis: ${basis};`"
+    :style="`
+      --justify-content: ${justifyContent};
+      --flex-grow: ${grow};
+      --flex-shrink: ${shrink};
+      --flex-basis: ${basis};
+      --gap: ${gapValue};
+    `"
     class="side-by-side">
     <slot />
   </component>
@@ -30,6 +36,17 @@ export default {
       type: String,
       default: '100%',
     },
+    gap: {
+      type: String,
+      default: '0',
+    },
+  },
+  computed: {
+    gapValue () {
+      return /^--/.test(this.gap)
+        ? `var(${this.gap})`
+        : this.gap
+    },
   },
 }
 </script>
@@ -44,5 +61,9 @@ export default {
   flex-grow: var(--flex-grow, 1);
   flex-shrink: var(--flex-shrink, 1);
   flex-basis: var(--flex-basis, 100%);
+}
+
+.side-by-side > * + * {
+  margin-left: var(--gap, 0)
 }
 </style>

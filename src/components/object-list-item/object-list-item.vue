@@ -179,6 +179,7 @@ export default {
   position: absolute;
   right: 0;
   bottom: var(--s-small);
+  font-size: 1.2rem;
 }
 
 .object-list-item__availablility-value {
