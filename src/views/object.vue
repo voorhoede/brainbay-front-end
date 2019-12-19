@@ -35,8 +35,24 @@
       </ObjectDetails>
     </Panel>
 
-    <Panel title="foo">
-      <p>some content</p>
+    <Panel title="Indicatie marktwaarde">
+      <SideBySide grow="0" basis="25%" justify-content="space-around">
+        <Stack tag="section" align-center>
+          <Icon><IconProjectedChart /></Icon>
+          <p>&euro;256.400</p>
+          <p>Op basis van prijsontwikkeling sinds laatste keer verkocht</p>
+        </stack>
+        <Stack tag="section" align-center>
+          <Icon><IconHouses /></Icon>
+          <p>&euro;257.000</p>
+          <p>Op basis van modelmatige waardebepaling</p>
+        </Stack>
+        <Stack tag="section" align-center>
+          <Icon><IconHouseBlueprint /></Icon>
+          <p>&euro;354.400</p>
+          <p>Op basis van huidige vierkantemeterprijs, woningtype en wijk</p>
+        </Stack>
+      </SideBySide>
     </Panel>
 
     <Panel title="foo">
@@ -50,13 +66,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import IconHouseBlueprint from '../assets/svg/icon-house-blueprint.svg'
+import IconHouses from '../assets/svg/icon-houses.svg'
+import IconProjectedChart from '../assets/svg/icon-projected-chart.svg'
 import Panel from '../components/panel/panel'
+import Icon from '../components/icon/icon'
+import SideBySide from '../components/layout/side-by-side'
+import Stack from '../components/layout/stack'
 import AddNoteButton from '../components/add-note-button/add-note-button'
 import ObjectDetails from '../components/object-details/object-details'
-import { mapGetters } from 'vuex'
 
 export default {
-  components: { Panel, AddNoteButton, ObjectDetails },
+  components: { Panel, AddNoteButton, ObjectDetails, Icon, IconHouseBlueprint, IconHouses, IconProjectedChart, SideBySide, Stack },
   mounted () {
     this.$store.commit('object/storeObject', window.object)
   },

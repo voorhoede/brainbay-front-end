@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-projected-chart">
+            <polygon id="Stroke-367" stroke="currentColor" points="6 32 41 32 41 8 6 8"></polygon>
+            <path d="M23.5,8 L23.5,6" id="Stroke-368" stroke="currentColor"></path>
+            <path d="M23.5,32 L23.5,39" id="Stroke-369" stroke="currentColor"></path>
+            <path d="M23,32 L32,41" id="Stroke-370" stroke="currentColor"></path>
+            <path d="M24,32 L15,41" id="Stroke-371" stroke="currentColor"></path>
+            <polygon id="Stroke-477" stroke="currentColor" points="10.5 17 10.5 17 10.5 13"></polygon>
+            <polygon id="Stroke-478" stroke="currentColor" points="14.5 17 14.5 17 14.5 13"></polygon>
+            <polyline id="Stroke-479" stroke="currentColor" points="8 15 11.5 11 15 15"></polyline>
+            <path d="M12,26 L17,21" id="Stroke-480" stroke="currentColor"></path>
+            <path d="M22,20 C22,18.8953333 21.1046667,18 20,18 C18.8953333,18 18,18.8953333 18,20 C18,21.1046667 18.8953333,22 20,22 C21.1046667,22 22,21.1046667 22,20 L22,20 Z" id="Stroke-481" stroke="currentColor"></path>
+            <path d="M13,27 C13,25.8953333 12.1046667,25 11,25 C9.89533333,25 9,25.8953333 9,27 C9,28.1046667 9.89533333,29 11,29 C12.1046667,29 13,28.1046667 13,27 L13,27 Z" id="Stroke-482" stroke="currentColor"></path>
+            <path d="M30,24 C30,22.8953333 29.1046667,22 28,22 C26.8953333,22 26,22.8953333 26,24 C26,25.1046667 26.8953333,26 28,26 C29.1046667,26 30,25.1046667 30,24 L30,24 Z" id="Stroke-483" stroke="currentColor"></path>
+            <path d="M38,17 C38,15.8953333 37.1046667,15 36,15 C34.8953333,15 34,15.8953333 34,17 C34,18.1046667 34.8953333,19 36,19 C37.1046667,19 38,18.1046667 38,17 L38,17 Z" id="Stroke-484" stroke="currentColor"></path>
+            <path d="M21,20 L26,23" id="Stroke-485" stroke="currentColor"></path>
+            <path d="M29,23 L34,18" id="Stroke-486" stroke="currentColor"></path>
+            <path d="M37,27.5 L39,27.5" id="Stroke-487" stroke="currentColor"></path>
+            <path d="M34,30.5 L39,30.5" id="Stroke-488" stroke="currentColor"></path>
+        </g>
+    </g>
+</svg>
