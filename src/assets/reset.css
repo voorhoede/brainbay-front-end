@@ -270,3 +270,7 @@ th {
    font-weight: normal;
    margin: 0;
  }
+
+ dl {
+   margin: 0;
+ }

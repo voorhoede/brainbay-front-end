@@ -24,3 +24,10 @@ a:hover {
 p {
   margin: 0;
 }
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: var(--c-dim);
+  margin: 0;
+}

@@ -1,8 +1,19 @@
 <template>
-  <span class="icon">
+  <span class="icon" :class="{'icon--circle': circle}">
     <slot />
   </span>
 </template>
+
+<script>
+export default {
+  props: {
+    circle: {
+      type: Boolean,
+      default: true,
+    },
+  },
+}
+</script>
 
 <style>
 .icon {
@@ -12,7 +23,7 @@
   position: relative;
 }
 
-.icon:before {
+.icon--circle:before {
   content: '';
   width: 200%;
   height: 200%;
