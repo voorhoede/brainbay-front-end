@@ -3,8 +3,10 @@
     class="add-note-button"
     :class="{
       'add-note-button--has-been-added': hasBeenAdded
-    }">
-    <Icon>
+    }"
+    aria-label="Voeg notitie toe"
+  >
+    <Icon aria-hidden="true">
       <IconNoteAdded v-if="hasBeenAdded"/>
       <IconNote v-else/>
     </Icon>

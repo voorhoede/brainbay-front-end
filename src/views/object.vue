@@ -39,16 +39,19 @@
       <AddNoteButton slot="action" />
       <SideBySide grow="0" basis="25%" justify-content="space-around">
         <Stack tag="section" align-center>
+          <h3 class="sr-only">Prijs ontwikkeling</h3>
           <Icon><IconProjectedChart /></Icon>
           <p>&euro;{{ priceDevelopment }}</p>
           <p>Op basis van prijsontwikkeling sinds laatste keer verkocht</p>
         </stack>
         <Stack tag="section" align-center>
+          <h3 class="sr-only">Modelmatigewaarde bepaling</h3>
           <Icon><IconHouses /></Icon>
           <p>&euro;{{ priceModel }}</p>
           <p>Op basis van modelmatige waardebepaling</p>
         </Stack>
         <Stack tag="section" align-center>
+          <h3 class="sr-only">Berekend</h3>
           <Icon><IconHouseBlueprint /></Icon>
           <p>&euro;{{ priceAlgorithm }}</p>
           <p>Op basis van huidige vierkantemeterprijs, woningtype en wijk</p>
@@ -63,7 +66,7 @@
         <ObjectList :objects="referencesSold">
           <ObjectListItem
             slot-scope="{ object }"
-            heading-level="h4"
+            :heading-level="4"
             :address="object.address"
             :match="object.match"
             :duration="object.duration"
@@ -80,7 +83,7 @@
         <ObjectList :objects="referencesForSale">
           <ObjectListItem
             slot-scope="{ object }"
-            heading-level="h4"
+            :heading-level="4"
             :address="object.address"
             :match="object.match"
             :duration="object.duration"
@@ -118,12 +121,17 @@ export default {
     this.$store.commit('object/details/store', window.object)
   },
   computed: {
-    ...mapGetters('object/details', ['address', 'type', 'details']),
+    ...mapGetters('object/details', ['streetName', 'address', 'type', 'details']),
     ...mapGetters('object/indicationMarketValue', ['priceDevelopment', 'priceModel', 'priceAlgorithm']),
     ...mapGetters({
       'referencesSold': 'references/sold/added',
       'referencesForSale': 'references/forSale/added',
     }),
+  },
+  watch: {
+    streetName (newValue) {
+      this.$emit('page-title', newValue)
+    },
   },
 }
 </script>

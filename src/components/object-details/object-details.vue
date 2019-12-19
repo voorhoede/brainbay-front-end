@@ -1,5 +1,5 @@
 <template>
-  <section class="object-details">
+  <div class="object-details">
     <div class="object-details__img-spacer">
       <slot name="image" />
     </div>
@@ -14,7 +14,7 @@
         <slot name="footer" />
       </footer>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

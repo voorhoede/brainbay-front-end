@@ -1,12 +1,18 @@
 <template>
   <article class="object-list-item">
     <header class="object-list-item__title">
-      <component :is="headingLevel">
+      <component :is="`h${headingLevel}`">
         <address>{{ address }}</address>
       </component>
     </header>
 
     <aside class="object-list-item__visual">
+      <component
+        :is="`h${headingLevel + 1}`"
+        class="sr-only"
+      >
+        Verkoop status
+      </component>
       <div class="object-list-item__visual-inner">
         <img src="" />
         <span v-if="match" class="object-list-item__match object-list-item__focus">
@@ -32,6 +38,12 @@
       </div>
     </aside>
 
+    <component
+      :is="`h${headingLevel + 1}`"
+      class="sr-only"
+    >
+      Object details
+    </component>
     <div v-if="askingPrice" class="object-list-item__asking-price">
       <small>Vraagprijs</small>
       <p class="object-list-item__focus">&euro; {{ askingPrice }} k.k.</p>
@@ -60,14 +72,29 @@
 
     <footer class="object-list-item__footer">
       <dl class="object-list-item__detail-list">
-        <dt class="object-list-item__detail-term" v-if="details.rooms"><span class="object-list-item__detail-term-text">Aantal kamers</span><Icon :circle="false"><IconNote /></Icon></dt>
-        <dd v-if="details.rooms"><small>{{ details.rooms }}</small></dd>
-        <dt class="object-list-item__detail-term" v-if="details.livingArea"><span class="object-list-item__detail-term-text">Woonoppervlak</span><Icon :circle="false"><IconNote /></Icon></dt>
-        <dd v-if="details.livingArea"><small>{{ details.livingArea }}m<sup>2</sup></small></dd>
-        <dt class="object-list-item__detail-term" v-if="details.propertyArea"><span class="object-list-item__detail-term-text">Perceel oppervlakte</span><Icon :circle="false"><IconNote /></Icon></dt>
-        <dd v-if="details.propertyArea"><small>{{ details.propertyArea }}m<sup>2</sup></small></dd>
-        <dt class="object-list-item__detail-term" v-if="details.yearOfConstruction"><span class="object-list-item__detail-term-text">Bouwjaar</span><Icon :circle="false"><IconNote /></Icon></dt>
-        <dd v-if="details.yearOfConstruction"><time><small>{{ details.yearOfConstruction }}</small></time></dd>
+        <dt class="object-list-item__detail-term" v-if="details.rooms">
+          <span class="sr-only">Aantal kamers</span>
+          <Icon :circle="false"><IconNote /></Icon>
+          </dt>
+          <dd v-if="details.rooms"><small>{{ details.rooms }}</small></dd>
+
+        <dt class="object-list-item__detail-term" v-if="details.livingArea">
+          <span class="sr-only">Woonoppervlak</span>
+          <Icon :circle="false"><IconNote /></Icon>
+          </dt>
+          <dd v-if="details.livingArea"><small>{{ details.livingArea }}m<sup>2</sup></small></dd>
+
+        <dt class="object-list-item__detail-term" v-if="details.propertyArea">
+          <span class="sr-only">Perceel oppervlakte</span>
+          <Icon :circle="false"><IconNote /></Icon>
+          </dt>
+          <dd v-if="details.propertyArea"><small>{{ details.propertyArea }}m<sup>2</sup></small></dd>
+
+        <dt class="object-list-item__detail-term" v-if="details.yearOfConstruction">
+          <span class="sr-only">Bouwjaar</span>
+          <Icon :circle="false"><IconNote /></Icon>
+          </dt>
+          <dd v-if="details.yearOfConstruction"><time><small>{{ details.yearOfConstruction }}</small></time></dd>
       </dl>
     </footer>
   </article>
@@ -80,8 +107,8 @@ export default {
   components: { Icon, IconNote },
   props: {
     headingLevel: {
-      type: String,
-      default: 'h3',
+      type: Number,
+      default: 3,
     },
     address: {
       type: String,
@@ -267,9 +294,5 @@ export default {
   top: 50%;
   transform: translateY(-40%);
   width: 1.6rem;
-}
-
-.object-list-item__detail-term-text {
-  display: none;
 }
 </style>

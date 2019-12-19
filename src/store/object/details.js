@@ -9,6 +9,11 @@ export default {
     },
   },
   getters: {
+    streetName ({ currentObject }) {
+      if (currentObject?.ObjectDetails?.Adres === undefined) return ''
+      const address = Object.values(currentObject.ObjectDetails.Adres)[0]
+      return `${address.Straatnaam} ${address.Huisnummer}`
+    },
     address ({ currentObject }) {
       if (currentObject?.ObjectDetails?.Adres === undefined) return ''
 

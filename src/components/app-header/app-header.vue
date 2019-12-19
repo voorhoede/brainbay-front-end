@@ -1,15 +1,16 @@
 <template>
-  <header class="app-header">
+  <header class="app-header" >
     <router-link class="app-header__home-link" :to="{name: 'landing'}">
-      <LogoWhite class="app-header__logo"/>
+      <span class="sr-only">Home</span>
+      <LogoWhite aria-hidden="true" class="app-header__logo"/>
     </router-link>
 
-    <div class="app-header__search">
+    <div class="app-header__search" role="search">
       <slot name="search" />
     </div>
 
     <button class="app-header__export-button">
-      <ArrowUp />
+      <ArrowUp aria-hidden="true"/>
       Exporteren
     </button>
   </header>

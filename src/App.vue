@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 class="sr-only">{{ pageTitle }}</h1>
     <component
       :is="isLanding ? 'app-hero' : 'app-header'"
     >
@@ -9,7 +10,7 @@
         slot="search"/>
     </component>
 
-    <router-view/>
+    <router-view @page-title="title => pageTitle = title"/>
   </div>
 </template>
 
@@ -26,6 +27,9 @@ export default {
     AppHero,
     SearchBar,
   },
+  data: () => ({
+    pageTitle: undefined,
+  }),
   computed: {
     isLanding () {
       return this.$route.name === 'landing'
