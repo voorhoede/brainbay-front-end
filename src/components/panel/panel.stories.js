@@ -11,6 +11,12 @@ storiesOf('Components|Panel', module)
               </panel>`,
     components: { Panel },
   }))
+  .add('More info url', () => ({
+    template: `<panel title="Panel title" more-info-url="#">
+                Content
+              </panel>`,
+    components: { Panel },
+  }))
   .add('Without divider', () => ({
     template: `<panel :divider="false" title="Panel title">
                 Content

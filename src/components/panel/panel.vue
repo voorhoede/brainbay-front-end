@@ -7,7 +7,7 @@
     }">
     <header class="panel__header">
       <h2>{{title}}</h2>
-      <router-link to="#">Meer info</router-link>
+      <router-link v-if="moreInfoUrl !== ''" :to="{moreInfoUrl}">Meer info</router-link>
       <div class="panel__action">
         <slot name="action"/>
       </div>
@@ -39,6 +39,10 @@ export default {
     tag: {
       type: String,
       default: 'section',
+    },
+    moreInfoUrl: {
+      type: String,
+      default: '',
     },
   },
 }
