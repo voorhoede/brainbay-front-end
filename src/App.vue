@@ -12,6 +12,7 @@
     </component>
 
     <router-view @page-title="title => pageTitle = title"/>
+    <portal-target name="modal" />
   </div>
 </template>
 

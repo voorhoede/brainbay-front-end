@@ -28,8 +28,15 @@
 
   --header-height: 11.2rem;
 
-  --ease-in-fast: 0.15s ease-in;
-  --ease-in-medium: 0.25s ease-in;
-  --ease-in-slow: 0.5s ease-in;
+  --ease-in-fast: 0.15s cubic-bezier(.66,0,1,.86);
+  --ease-in-medium: 0.25s cubic-bezier(.66,0,1,.86);
+  --ease-in-slow: 0.5s cubic-bezier(.66,0,1,.86);
+
+  --ease-out-fast: 0.15s cubic-bezier(.01,.66,.86,1);
+  --ease-out-medium: 0.25s cubic-bezier(.01,.66,.86,1);
+  --ease-out-slow: 0.5s cubic-bezier(.01,.66,.86,1);
+  
   --ease-out-instant: 0.1s ease-out;
+
+  --max-page-width: 96.0rem;
 }

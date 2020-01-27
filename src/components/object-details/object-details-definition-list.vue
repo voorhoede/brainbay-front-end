@@ -33,7 +33,6 @@ export default {
 
         return createElement('div', { attrs: { class: className } }, childList)
       })
-    console.log(firstChild)
     return createElement('dl', { attrs: { class: 'object-details-definition-list' } }, wrappedChilren)
   },
 }

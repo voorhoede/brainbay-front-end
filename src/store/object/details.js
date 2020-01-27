@@ -1,37 +1,41 @@
+import Vue from 'vue'
+
 export default {
   namespaced: true,
-  state: {
-    currentObject: {},
-  },
+  state: {},
   mutations: {
     store (state, payload) {
-      state.currentObject = Object.freeze(payload)
+      Object.entries(payload).forEach(([key, value]) => {
+        Vue.set(state, key, value)
+      })
     },
   },
   getters: {
-    streetName ({ currentObject }) {
-      if (currentObject?.ObjectDetails?.Adres === undefined) return ''
-      const address = Object.values(currentObject.ObjectDetails.Adres)[0]
-      return `${address.Straatnaam} ${address.Huisnummer}`
+    streetName ({ streetName = '', houseNumber = '' }) {
+      return `${streetName} ${houseNumber}`.trim()
     },
-    address ({ currentObject }) {
-      if (currentObject?.ObjectDetails?.Adres === undefined) return ''
-
-      const address = Object.values(currentObject.ObjectDetails.Adres)[0]
-      return `${address.Straatnaam} ${address.Huisnummer}, ${address.Postcode} ${address.Woonplaats}`
+    address ({ address = '' }) {
+      return address
     },
-    type ({ currentObject }) {
-      if (currentObject?.Wonen?.Woonhuis === undefined) return ''
-
-      const { SoortWoning = '', TypeWoning = '' } = currentObject.Wonen.Woonhuis
-      return [SoortWoning, TypeWoning]
-        .filter(x => x)
-        .join(', ')
+    type ({ woningType = '' }) {
+      return woningType
     },
-    details ({ currentObject }) {
-      const bouwjaar = currentObject?.Wonen?.WonenDetails?.Bouwjaar?.JaarOmschrijving?.[0]?.Jaar
-      const koopsom = currentObject?.ObjectDetails?.Koop?.Koopprijs
-      return { bouwjaar, koopsom }
+    details ({
+      rooms = '',
+      livingArea = '',
+      propertyArea = '',
+      yearOfConstruction = '',
+      purchasePrice = '',
+      transactionDate = '',
+    }) {
+      return {
+        rooms,
+        livingArea,
+        propertyArea,
+        yearOfConstruction,
+        purchasePrice,
+        transactionDate,
+      }
     },
   },
 }

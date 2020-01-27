@@ -1,7 +1,7 @@
 <template>
   <main>
     <nav id="nav">
-      <router-link to="/foo">Object</router-link>
+      <router-link to="foo">Object</router-link>
     </nav>
   </main>
 </template>

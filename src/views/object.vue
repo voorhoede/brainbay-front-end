@@ -17,17 +17,17 @@
         <p slot="header">{{ type }}</p>
         <dl>
           <dt>Aantal kamers</dt>
-          <dd>6</dd>
+          <dd>{{ details.rooms }}</dd>
           <dt>Woonoppervlakte</dt>
-          <dd>135m2</dd>
+          <dd>{{ details.livingArea }}m2</dd>
           <dt>Perceeloppervlakte</dt>
-          <dd>150m2</dd>
+          <dd>{{ details.propertyArea }}m2</dd>
           <dt>Bouwjaar</dt>
-          <dd>{{ details.bouwjaar }}</dd>
+          <dd>{{ details.yearOfConstruction }}</dd>
           <dt>Koopsom</dt>
-          <dd>{{ details.koopsom }} k.k.</dd>
+          <dd>{{ details.purchasePrice }} k.k.</dd>
           <dt>Transactiedatum</dt>
-          <dd>12-03-2009</dd>
+          <dd>{{ details.transactionDate }}</dd>
         </dl>
         <span slot="footer">Let op: belast met erfpacht</span>
       </ObjectDetails>
@@ -116,6 +116,7 @@ import ObjectListItem from '../components/object-list-item/object-list-item'
 export default {
   components: { Panel, AddNoteButton, ObjectDetails, Icon, IconHouseBlueprint, IconHouses, IconProjectedChart, SideBySide, Stack, ObjectList, ObjectListItem },
   mounted () {
+    window.store = this.$store
     this.$store.commit('object/details/store', window.object)
   },
   computed: {
